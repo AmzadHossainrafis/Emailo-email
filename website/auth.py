@@ -38,15 +38,21 @@ def logout():
 
 @auth.route('/sighup',methods=['GET','POST'])
 def signup():
+
+
+
+
+
     if request.method == 'POST':
         email = request.form.get('email')
         first_name = request.form.get('first_name')
         last_name = request.form.get('last_name')
         password = request.form.get('password')
-        user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Email already exists',category='error')
+        user = User.query.filter_by(email=email).first() 
 
+
+        if user == email:
+            flash('Email already exists',category='error')
         if len(email) < 4:
             flash('email must be greater than 3 characters.',category='error')
         elif len(first_name) < 2:

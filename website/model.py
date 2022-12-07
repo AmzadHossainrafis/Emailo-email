@@ -10,6 +10,7 @@ class Inbox(db.Model):
     date_created = db.Column(db.DateTime(timezone=True),default=func.now())
     massage = db.Column(db.String(1500))
     mail_form= db.Column(db.String(150)) 
+    category = db.Column(db.String(50)) 
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
    
 class User(db.Model,UserMixin):
