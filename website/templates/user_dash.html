@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Dashboard</title>
-        i
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="{{ url_for('static', filename='indes.js') }}"></script>
@@ -61,6 +60,32 @@
                     <button type="submit" class="btn btn-primary">Send</button>
                 </form>
             </div>
+            </div>
+        </div>
+    </div>
+       
+        <div class="col-sm-6">
+            <div class="container-fluid">
+                <h2>inbox</h2>
+               
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>from</th>
+                            <th>subject</th>
+                            <th>massage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in inbox %}
+                        <tr>
+                            <td>{{i.mail_form}}</td>
+                            <td>{{i.subject}}</td>
+                            <td>{{i.massage}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
 
 </body>

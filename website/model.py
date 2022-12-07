@@ -9,6 +9,7 @@ class Inbox(db.Model):
     subject = db.Column(db.String(150))
     date_created = db.Column(db.DateTime(timezone=True),default=func.now())
     massage = db.Column(db.String(1500))
+    mail_form= db.Column(db.String(150)) 
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
    
 class User(db.Model,UserMixin):
@@ -18,4 +19,4 @@ class User(db.Model,UserMixin):
     last_name = db.Column(db.String(150))
     password = db.Column(db.String(150))
     date_created = db.Column(db.DateTime(timezone=True),default=func.now())
-    inbox = db.relationship('Inbox')
+    inbox = db.relationship('Inbox',backref='user')

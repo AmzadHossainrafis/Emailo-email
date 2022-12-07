@@ -15,10 +15,10 @@ def user_dashboard():
         inbox = request.form.get('inbox')
         subject = request.form.get('subject')
         massage = request.form.get('massage')   
-        new_inbox = Inbox(id=id,inbox=inbox,massage=massage,user_id=current_user.id,subject=subject)
+        new_inbox = Inbox(id=id,inbox=inbox,massage=massage,user_id=current_user.id,subject=subject,mail_form=current_user.email)
         db.session.add(new_inbox)
         db.session.commit()
         flash('massage sent',category='success')
         return redirect(url_for('view.user_dashboard'))
-
-    return render_template('user_dash.html') 
+    inbox = Inbox.query.filter_by(inbox=current_user.email).all()
+    return render_template('user_dash.html',inbox=inbox) 
