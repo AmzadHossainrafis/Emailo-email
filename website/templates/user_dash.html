@@ -1,97 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dashboard</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="{{ url_for('static', filename='indes.js') }}"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>  
-<!--nev bar with home , logout  --> 
-<nav class="navbar navbar-inverse"> 
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">{{current_user.email}}</a>
-        </div>
-        <ul class="nav navbar" style="float:right">
-            <li><a id="logout" href="/logout">Logout</a></li>
-        </ul>
+<head>
+    <title>Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='indes.js') }}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    </div>
-</nav>
-<div class = "container-fluid bg-success">
-    <div class="row">
-    
-        <div class="col-sm-6">
-            <p>
-           
-              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  compose
-                </button>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-              </p>
-            <div class="collapse" id="collapseExample">
-                
-            <div class="container">
-    
-                <form method="POST">
-    
-                    <div class="form-group">
-                        <label for="to">To:</label>
-                        <input type="text" class="form-control" id="to" placeholder="Enter To" name="inbox">   
-                    </div>
-                    <div class="form-group">
-    
-                        <label for="to">subject:</label>
-                        <input type="text" class="form-control" id="to" placeholder=" enter your subject " name="subject">   
-                    </div>
-                    <div class="form-group form-control-lg">
-                        <label for="exampleFormControlTextarea1">massage</label>
-                      <textarea name="massage" id="note" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>  
-                    </div>
-                    <div class="form-group">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-                        <div class="form-check  form-check-inline">
-                            <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="primary">
-                            <label class="form-check" for="inlineRadio1">Primary</label>
-                        </div>
-                        <div class="form-checkn form-check-inline">
-                            <input class="form-check" type="radio" name="category" id="inlineRadio2" value="social">
-                            <label class="form-check " for="inlineRadio2">Social</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check " type="radio" name="category" id="inlineRadio3" value="promotion">
-                            <label class="form-check " for="inlineRadio3">Promotion</label>
-                    </div>
-                        </div>
+<body>
+    <!--nev bar with home , logout  -->
 
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand text-primary">User : {{current_user.first_name}}</a>
+                <a class="navbar-brand ">Email : {{current_user.email}}</a>
             </div>
+            <ul class="nav navbar" style="float:right">
+                <li><a class="btn btn-primary  btn-danger" id="logout" href="/logout">Logout</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container-fluid bg-success">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <p>
+
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        compose
+                    </button>
+
+                </p>
+                <div class="collapse" id="collapseExample">
+
+                    <div class="container">
+
+                        <form method="POST">
+
+                            <div class="form-group">
+                                <label for="to">To:</label>
+                                <input type="text" class="form-control" id="to" placeholder="Enter To" name="inbox">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="to">subject:</label>
+                                <input type="text" class="form-control" id="to" placeholder=" enter your subject "
+                                    name="subject">
+                            </div>
+                            <div class="form-group form-control-lg">
+                                <label for="exampleFormControlTextarea1">massage</label>
+                                <textarea name="massage" id="note" class="form-control" id="exampleFormControlTextarea1"
+                                    rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="form-check  form-check-inline">
+                                    <input class="form-check-input" type="radio" name="category" id="inlineRadio1"
+                                        value="primary">
+                                    <label class="form-check" for="inlineRadio1">Primary</label>
+                                </div>
+                                <div class="form-checkn form-check-inline">
+                                    <input class="form-check" type="radio" name="category" id="inlineRadio2"
+                                        value="social">
+                                    <label class="form-check " for="inlineRadio2">Social</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check " type="radio" name="category" id="inlineRadio3"
+                                        value="promotion">
+                                    <label class="form-check " for="inlineRadio3">Promotion</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-   
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="container-fluid">
-                <h2>Primary</h2>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>from</th>
-                            <th>subject</th>
-                            <th>massage</th>
-                        </tr>
-                    </thead>
+
+ <div class="container-fluid bg-info">  
+
+     
+     
+     <div class="row">
+         <div class="col-sm-4">
+             <div class="container-fluid">
+                 <h2>Primary</h2>
+                 <table class="table table-bordered">
+                     <thead>
+                         <tr>
+                             <th>from</th>
+                             <th>subject</th>
+                             <th>massage</th>
+                            </tr>
+                        </thead>
                     <tbody>
-                        {% for i in find_all_primary %} 
+                        {% for i in find_all_primary %}
                         <tr>
                             <td>{{i.mail_form}}</td>
                             <td>{{i.subject}}</td>
@@ -114,7 +130,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for i in find_all_social %} 
+                        {% for i in find_all_social %}
                         <tr>
                             <td>{{i.mail_form}}</td>
                             <td>{{i.subject}}</td>
@@ -137,7 +153,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for i in find_all_promotion %} 
+                        {% for i in find_all_promotion %}
                         <tr>
                             <td>{{i.mail_form}}</td>
                             <td>{{i.subject}}</td>
@@ -148,18 +164,20 @@
                 </table>
             </div>
         </div>
-
-
-
-       
-      <!--  <div class="col-sm-6">
-            <div class="container-fluid">
-                <h2>inbox</h2>
-               
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>from</th>
+    </div>
+</div>
+    
+    
+    
+    
+    <!--  <div class="col-sm-6">
+        <div class="container-fluid">
+            <h2>inbox</h2>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>from</th>
                             <th>subject</th>
                             <th>massage</th>
                         </tr>

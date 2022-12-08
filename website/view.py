@@ -22,7 +22,11 @@ def user_dashboard():
         flash('massage sent',category='success')
         return redirect(url_for('view.user_dashboard'))
     inbox = Inbox.query.filter_by(inbox=current_user.email).all()
-    #group by catagory 
+    #group by catagory and sort by date 
+    
+
+
+
     find_all_primary = Inbox.query.filter_by(inbox=current_user.email,category='primary').all()
     find_all_social = Inbox.query.filter_by(inbox=current_user.email,category='social').all()
     find_all_promotion = Inbox.query.filter_by(inbox=current_user.email,category='promotion').all()
