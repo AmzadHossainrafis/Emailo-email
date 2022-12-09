@@ -15,10 +15,31 @@
 </head>
 
 <body>
-    <!--nev bar with home , logout  -->
+<div> 
 
-
-    <nav class="navbar navbar-inverse">
+{% with messages = get_flashed_messages(with_categories =true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == 'error' %}
+<div class="alert alert-danger " role="alert">
+    {{ message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{%else%}
+<div class="alert alert-success " role="alert">
+    {{ message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+        
+        <nav class="navbar2 navbar-inverse bg-dark">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand text-primary">User : {{current_user.first_name}}</a>
@@ -30,10 +51,12 @@
 
         </div>
     </nav>
+   
     <div class="container-fluid bg-success">
         <div class="row">
 
             <div class="col-sm-6">
+                <br>
                 <p>
 
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
@@ -90,108 +113,85 @@
         </div>
     </div>
 
- <div class="container-fluid bg-info">  
+    <div class="container-fluid bg-info">
 
-     
-     
-     <div class="row">
-         <div class="col-sm-4">
-             <div class="container-fluid">
-                 <h2>Primary</h2>
-                 <table class="table table-bordered">
-                     <thead>
-                         <tr>
-                             <th>from</th>
-                             <th>subject</th>
-                             <th>massage</th>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="container-fluid">
+                    <h2>Primary</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>from</th>
+                                <th>subject</th>
+                                <th>massage</th>
                             </tr>
                         </thead>
-                    <tbody>
-                        {% for i in find_all_primary %}
-                        <tr>
-                            <td>{{i.mail_form}}</td>
-                            <td>{{i.subject}}</td>
-                            <td>{{i.massage}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        <tbody>
+                            {% for i in find_all_primary %}
+                            <tr>
+                                <td>{{i.mail_form}}</td>
+                                <td>{{i.subject}}</td>
+                                <td>{{i.massage}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="container-fluid">
-                <h2>Social</h2>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>from</th>
-                            <th>subject</th>
-                            <th>massage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in find_all_social %}
-                        <tr>
-                            <td>{{i.mail_form}}</td>
-                            <td>{{i.subject}}</td>
-                            <td>{{i.massage}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <div class="col-sm-4">
+                <div class="container-fluid">
+                    <h2>Social</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>from</th>
+                                <th>subject</th>
+                                <th>massage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in find_all_social %}
+                            <tr>
+                                <td>{{i.mail_form}}</td>
+                                <td>{{i.subject}}</td>
+                                <td>{{i.massage}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="container-fluid">
-                <h2>Promotion</h2>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>from</th>
-                            <th>subject</th>
-                            <th>massage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in find_all_promotion %}
-                        <tr>
-                            <td>{{i.mail_form}}</td>
-                            <td>{{i.subject}}</td>
-                            <td>{{i.massage}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <div class="col-sm-4">
+                <div class="container-fluid">
+                    <h2>Promotion</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>from</th>
+                                <th>subject</th>
+                                <th>massage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in find_all_promotion %}
+                            <tr>
+                                <td>{{i.mail_form}}</td>
+                                <td>{{i.subject}}</td>
+                                <td>{{i.massage}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+
+
+
     
-    
-    
-    
-    <!--  <div class="col-sm-6">
-        <div class="container-fluid">
-            <h2>inbox</h2>
-            
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>from</th>
-                            <th>subject</th>
-                            <th>massage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in inbox %}
-                        <tr>
-                            <td>{{i.mail_form}}</td>
-                            <td>{{i.subject}}</td>
-                            <td>{{i.massage}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        -->
 </body>
