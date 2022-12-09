@@ -95,3 +95,7 @@ A brief description of what this project does and who it's for
 ```bash
     $ heroku open
 ```
+## Authors
+
+- [@AmzadHossainrafis](https://github.com/AmzadHossainrafis)
+
