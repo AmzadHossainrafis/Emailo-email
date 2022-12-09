@@ -63,10 +63,10 @@ A brief description of what this project does and who it's for
 ```
 ## Deploy in heroku 
 ### Importeant warning : 
-    1. note that you need to have git installed in your machine 
-    2. must have a Procfile in the root of your project , it will tell heroku how to run your app (in my case it is web: gunicorn app:app)
-    3. requirements.txt file must be in the root of your project, it will tell heroku what packages to install 
-    4. runtime.txt file must be in the root of your project, it will tell heroku what version of python to use (in my case it is python 3.10.5) 
+    * note that you need to have git installed in your machine 
+    * must have a Procfile in the root of your project , it will tell heroku how to run your app (in my case it is web: gunicorn app:app)
+    * requirements.txt file must be in the root of your project, it will tell heroku what packages to install 
+    * runtime.txt file must be in the root of your project, it will tell heroku what version of python to use (in my case it is python 3.10.5) 
 
 1. [Create a heroku account]()
 2. [Download heroku cli and install it](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
