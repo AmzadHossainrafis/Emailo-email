@@ -38,73 +38,75 @@
     {% endif %}
     {% endwith %}
 </div>
-        
-        <nav class="navbar2 navbar-inverse bg-dark">
+
+
+    
+    <nav class="navbar2 navbar-inverse bg-dark">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand text-primary">User : {{current_user.first_name}}</a>
                 <a class="navbar-brand ">Email : {{current_user.email}}</a>
             </div>
             <ul class="nav navbar" style="float:right">
-                <li><a class="btn btn-primary  btn-danger" id="logout" href="/logout">Logout</a></li>
+                <li><a class="btn btn-primary  btn-danger" id="logout" href="/">Logout</a></li>
             </ul>
-
+            
         </div>
     </nav>
-   
+    
     <div class="container-fluid bg-success">
         <div class="row">
-
+            
             <div class="col-sm-6">
                 <br>
                 <p>
-
+                    
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        compose
-                    </button>
-
-                </p>
-                <div class="collapse" id="collapseExample">
-
-                    <div class="container">
-
-                        <form method="POST">
-
-                            <div class="form-group">
-                                <label for="to">To:</label>
-                                <input type="text" class="form-control" id="to" placeholder="Enter To" name="inbox">
-                            </div>
-                            <div class="form-group">
-
-                                <label for="to">subject:</label>
-                                <input type="text" class="form-control" id="to" placeholder=" enter your subject "
-                                    name="subject">
+                    aria-expanded="false" aria-controls="collapseExample">
+                    compose
+                </button>
+                
+            </p>
+            <div class="collapse" id="collapseExample">
+                
+                <div class="container">
+                    
+                    <form method="POST">
+                        
+                        <div class="form-group">
+                            <label for="to">To:</label>
+                            <input type="text" class="form-control" id="to" placeholder="Enter To" name="inbox">
+                        </div>
+                        <div class="form-group">
+                            
+                            <label for="to">subject:</label>
+                            <input type="text" class="form-control" id="to" placeholder=" enter your subject "
+                            name="subject">
                             </div>
                             <div class="form-group form-control-lg">
                                 <label for="exampleFormControlTextarea1">massage</label>
                                 <textarea name="massage" id="note" class="form-control" id="exampleFormControlTextarea1"
-                                    rows="5"></textarea>
+                                rows="5"></textarea>
                             </div>
                             <div class="form-group">
-
+                                
                                 <div class="form-check  form-check-inline">
                                     <input class="form-check-input" type="radio" name="category" id="inlineRadio1"
-                                        value="primary">
+                                    value="primary">
                                     <label class="form-check" for="inlineRadio1">Primary</label>
                                 </div>
                                 <div class="form-checkn form-check-inline">
                                     <input class="form-check" type="radio" name="category" id="inlineRadio2"
-                                        value="social">
+                                    value="social">
                                     <label class="form-check " for="inlineRadio2">Social</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check " type="radio" name="category" id="inlineRadio3"
-                                        value="promotion">
+                                    value="promotion">
                                     <label class="form-check " for="inlineRadio3">Promotion</label>
                                 </div>
                             </div>
-
+                            
                             <button type="submit" class="btn btn-primary">Send</button>
                         </form>
                     </div>
@@ -112,10 +114,10 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container-fluid bg-info">
-
-
+        
+        
 
         <div class="row">
             <div class="col-sm-4">
@@ -180,7 +182,7 @@
                             <tr>
                                 <td>{{i.mail_form}}</td>
                                 <td>{{i.subject}}</td>
-                                <td>{{i.massage}}</td>
+                                <td><b>{{i.massage}}</b></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -189,9 +191,13 @@
             </div>
         </div>
     </div>
-
+    
+    
+    
 
 
 
     
 </body>
+        
+        </html>

@@ -5,7 +5,6 @@ from sqlalchemy import desc
 from .model import Inbox
 from . import db
 @view.route('/') 
-@login_required
 def home():
     return render_template('home.html')
 
