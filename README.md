@@ -1,10 +1,7 @@
 
 # Emailo-App
 
-
-![Alt text](website/static/banner%20(1).png)
-
-
+![Alt text](website/static/gitlab_img/git_banner.png)
 
 A brief description of what this project does and who it's for
 
