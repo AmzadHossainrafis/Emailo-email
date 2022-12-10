@@ -12,7 +12,7 @@ font-family: Cursive;
 
 
 .mynav{ 
-    background-image: url(../static/bg-200.png);
+    background-image: url(../static/image/bg-200.png);
     line-height: 1.5;
     height: 700px;
     width: 100%;
