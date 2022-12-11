@@ -1,7 +1,7 @@
 
 # Emailo-App
 
-![Alt text](website/static/gitlab_img/git_banner.png)
+![Alt text](website/static/gitlab_img/banner%20(1).png)
 
 A brief description of what this project does and who it's for
 live demo : [https://romatoo-email.herokuapp.com/](https://eamil-apps-flask.herokuapp.com/)    
