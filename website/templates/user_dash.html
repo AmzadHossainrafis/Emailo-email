@@ -14,7 +14,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
 <div> 
 
 {% with messages = get_flashed_messages(with_categories =true) %}
@@ -174,33 +173,34 @@
                     </table>
                 </div>
             </div>
+        </div>
 
-            <div class="col-sm-6">
-                <div class="container-fluid">
-                    <p style="font-size:30px;color:brown;">Promotion</p>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>from</th>
-                                <th>subject</th>
-                                <th>massage</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for i in find_all_promotion %}
-                            <tr>
-                                <td>{{i.mail_form}}</td>
-                                <td>{{i.subject}}</td>
-                                <td><b>{{i.massage}}</b></td>
-                                <td>{{i.date_created}}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+    <div class="col-sm-6">
+        <div class="container-fluid">
+            <p style="font-size:30px;color:brown;">Promotion</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>from</th>
+                        <th>subject</th>
+                        <th>massage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in find_all_promotion %}
+                    <tr>
+                        <td>{{i.mail_form}}</td>
+                        <td>{{i.subject}}</td>
+                        <td><b>{{i.massage}}</b></td>
+                        <td>{{i.date_created}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
             
                 </div>
             </div>  
-    
+            
             <div class="col-sm-6">
                 <div class="container-fluid">
                     <p style="font-size:30px;color:brown;">Foram</p>
@@ -213,28 +213,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                        {% for i in find_all_forums %}
-                        <tr>
-                            <td>{{i.mail_form}}</td>
-                            <td>{{i.subject}}</td>
-                            <td>{{i.massage}}</td>
-                            <td>{{i.date_created}}</td>
-                        </tr>
-                        {% endfor %}
+                            {% for i in find_all_forums %}
+                            <tr>
+                                <td>{{i.mail_form}}</td>
+                                <td>{{i.subject}}</td>
+                                <td>{{i.massage}}</td>
+                                <td>{{i.date_created}}</td>
+                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
             
-
-
-
-
-
-
-            </div>
             
         </div>
+        
+        
+        
+    </div>
+    
+</div>
+</div>
+</div>
+
     </div>
     
     

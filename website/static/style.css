@@ -12,7 +12,7 @@ font-family: Cursive;
 
 
 .mynav{ 
-    background-image: url(../static/image/bg-200.png);
+    background-image: url(../static/image/bg1.png);
     line-height: 1.5;
     height: 700px;
     width: 100%;
@@ -35,7 +35,7 @@ font-family: Cursive;
     }
     
 .navbar-brand{
-    color: black;
+    color: greenyellow;
     text-align: center;
     
     }
@@ -54,4 +54,11 @@ font-family: Cursive;
     font-style: italic;
     
     
+    }
+.mynav2{ 
+    background-image: url(../static/image/bgm.png);
+    line-height: 1.5;
+    height: 700px;
+    width: 100%;
+    text-align: center;
     }
