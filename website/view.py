@@ -62,5 +62,7 @@ def user_dashboard():
     find_all_primary = Inbox.query.filter_by(inbox=current_user.email,category='primary').order_by(desc(Inbox.date_created))        # find all the email where category is primary and order them by the date they were created 
     find_all_social = Inbox.query.filter_by(inbox=current_user.email,category='social').order_by(desc(Inbox.date_created))          # find all the email where category is SOCIAL
     find_all_promotion = Inbox.query.filter_by(inbox=current_user.email,category='promotion').order_by(desc(Inbox.date_created))    # find all the email where category is PROMOTION
+    find_all_forums = Inbox.query.filter_by(inbox=current_user.email,category='foram').order_by(desc(Inbox.date_created))          # find all the email where category is FORUMS  
 
-    return render_template('user_dash.html', find_all_primary=find_all_primary,find_all_social=find_all_social,find_all_promotion=find_all_promotion)
+
+    return render_template('user_dash.html', find_all_primary=find_all_primary,find_all_social=find_all_social,find_all_promotion=find_all_promotion,find_all_forums=find_all_forums)
