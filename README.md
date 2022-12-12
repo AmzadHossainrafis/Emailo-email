@@ -15,19 +15,23 @@ live demo : [https://romatoo-email.herokuapp.com/](https://eamil-apps-flask.hero
 2. Sign up page 
 
 * user can sign up with email he wants to use fast_name and last_name and password 
+  ![Alt text](website/static/gitlab_img/sg2.jpg)
 * it will flash a message if user is already registered with the email 
 * it will redirect to login page if user is not registered 
   
    
-3. User dashboard 
+1. User dashboard 
     
 
     1. Send email page 
-      * user can see all his sent emails 
+      * user can send email from his emails_id
+    ![Alt text](website/static/gitlab_img/send_email.jpg)
       * while sending email, user can select eamil category 
-
     2. Inbox page 
+      * read email
+    ![Alt text](website/static/gitlab_img/recieve_email.jpg)
       * user can see all his emails divided into 4 section 
+    ![Alt text](website/static/gitlab_img/inbox.jpg)
 
 
 ## How to run in your local machine 
