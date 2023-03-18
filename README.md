@@ -4,7 +4,7 @@
 ![Alt text](website/static/gitlab_img/banner%20(1).png)
 
 A brief description of what this project does and who it's for
-live demo : [https://romatoo-email.herokuapp.com/](https://eamil-apps-flask.herokuapp.com/)    
+live demo : [https://emailoapp.herokuapp.com/](https://emailoapp.herokuapp.com/)    
 
 ### What is emplimented: 
 
